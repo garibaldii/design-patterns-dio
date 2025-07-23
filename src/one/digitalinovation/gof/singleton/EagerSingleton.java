@@ -1,6 +1,4 @@
-package one.digitalinovation.gof;
-
-import java.security.spec.ECGenParameterSpec;
+package one.digitalinovation.gof.singleton;
 
 /**
  * Singleton preguiçoso
