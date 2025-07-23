@@ -1,5 +1,6 @@
 package one.digitalinovation.gof;
 
+import one.digitalinovation.gof.facade.Facade;
 import one.digitalinovation.gof.singleton.EagerSingleton;
 import one.digitalinovation.gof.singleton.LazyHolderSingleton;
 import one.digitalinovation.gof.singleton.LazySingleton;
@@ -37,35 +38,41 @@ public class Main {
         //Strategy
         //pode-se assimilar o conceito a um gerenciamento de veículos, ou estacionamento
 
-        Runnable runnable = new Runnable() {
-            @Override
-            public void run() {
-                try {
-                    Thread.sleep(5000);
-                } catch (InterruptedException e) {
-                    System.out.println("Error");
-                }
-            }
-        };
+//        Runnable runnable = new Runnable() {
+//            @Override
+//            public void run() {
+//                try {
+//                    Thread.sleep(5000);
+//                } catch (InterruptedException e) {
+//                    System.out.println("Error");
+//                }
+//            }
+//        };
+//
+//        Thread thread = new Thread(runnable);
+//
+//        Behavior normal = new NormalBehavior();
+//        Behavior agressive = new AgressiveBehavior();
+//        Behavior defensive = new DefensiveBehavior();
+//
+//        Robot robot = new Robot();
+//
+//        robot.setBehavior(agressive);
+//        robot.move();
+//
+//
+//
+//        robot.setBehavior(defensive);
+//        robot.move();
+//
+//
+//        robot.setBehavior(normal);
+//        robot.move();
 
-        Thread thread = new Thread(runnable);
+        //Facade
 
-        Behavior normal = new NormalBehavior();
-        Behavior agressive = new AgressiveBehavior();
-        Behavior defensive = new DefensiveBehavior();
+        Facade facade = new Facade();
 
-        Robot robot = new Robot();
-
-        robot.setBehavior(agressive);
-        robot.move();
-
-
-
-        robot.setBehavior(defensive);
-        robot.move();
-
-
-        robot.setBehavior(normal);
-        robot.move();
+        facade.migrateClient("Matheus", "12345-000");
     }
 }
